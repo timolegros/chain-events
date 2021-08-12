@@ -7,8 +7,6 @@ import * as MolochTypes from './chains/moloch/types';
 import * as MarlinTypes from './chains/marlin/types';
 import * as Erc20Types from './chains/erc20/types';
 import * as AaveTypes from './chains/aave/types';
-import { IEvent, RegisteredTypes } from '@polkadot/types/types';
-import { StorageFetcher } from './chains/substrate';
 
 // add other events here as union types
 export type IChainEntityKind =

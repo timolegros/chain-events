@@ -57,10 +57,10 @@ function createListener(chain, options, customChainBase) {
             listener = new substrate_1.Listener(chain, options.url || index_1.networkUrls[chain], options.spec, !!options.archival, options.startBlock || 0, !!options.skipCatchup, options.enricherConfig, !!options.verbose, !!customChainBase, options.discoverReconnectRange);
         }
         else if (basePicker(chain, 'moloch')) {
-            listener = new Listener_1.Listener(chain, options.MolochContractVersion ? options.MolochContractVersion : 2, options.address, options.url || index_1.networkUrls[chain], !!options.skipCatchup, !!options.verbose);
+            listener = new Listener_1.Listener(chain, options.MolochContractVersion ? options.MolochContractVersion : 2, options.address, options.url || index_1.networkUrls[chain], !!options.skipCatchup, !!options.verbose, options.discoverReconnectRange);
         }
         else if (basePicker(chain, 'compound')) {
-            listener = new Listener_2.Listener(chain, options.address, options.url || index_1.networkUrls[chain], !!options.skipCatchup, !!options.verbose);
+            listener = new Listener_2.Listener(chain, options.address, options.url || index_1.networkUrls[chain], !!options.skipCatchup, !!options.verbose, options.discoverReconnectRange);
         }
         else if (basePicker(chain, 'erc20')) {
             listener = new erc20_1.Listener(chain, options.tokenAddresses || [options.address], options.url || 'wss://mainnet.infura.io/ws/v3/', Array.isArray(options.tokenNames) ? options.tokenNames : undefined, !!options.verbose, !!customChainBase);
